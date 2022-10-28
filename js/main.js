@@ -2,14 +2,14 @@
 
 let weatherBlock = document.querySelector('.weather'), 
     searchInput = document.querySelector('.search__input'),
-    searchBtn = document.querySelector('.search__btn')
+    searchBtn = document.querySelector('.search__btn');
 
 
 let city = 'Krasnodar', key = '5808708a7b778551ef1ba86c7f6d13fb';
 
 const getWeatherFromApi = async function () {
     try {
-        const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=5808708a7b778551ef1ba86c7f6d13fb`)
+        const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`)
         const weather = await res.json();
     
     
@@ -18,9 +18,9 @@ const getWeatherFromApi = async function () {
     
         html =
         `
-            <h1 class="weather__city">Ваш город: ${city}</h1>
-            <p class="weather__temperature">Температура воздуха: ${temperature}</p>
-            <p class="weather__feels_like">Температура ощущается как: ${feelsLike}</p>
+            <h1 class="weather__city">Your city: <span>${city}</span></h1>
+            <p class="weather__temperature">Temperature: ${temperature}</p>
+            <p class="weather__feels_likes">Temperature feels like: ${feelsLike}</p>
         `
         weatherBlock.insertAdjacentHTML('beforeend', html);
     

@@ -5,7 +5,7 @@ let weatherBlock = document.querySelector('.weather'),
     searchBtn = document.querySelector('.search__btn');
 
 
-let city = 'Krasnodar', key = '5808708a7b778551ef1ba86c7f6d13fb';
+let city = 'Moscow', key = '5808708a7b778551ef1ba86c7f6d13fb';
 
 const getWeatherFromApi = async function () {
     try {
@@ -34,7 +34,7 @@ const getWeatherFromApi = async function () {
     }
     catch {
         alert('This city not found');
-        city = 'Krasnodar';
+        city = 'Moscow';
         getWeatherFromApi();
         searchInput.value = '';
     }
